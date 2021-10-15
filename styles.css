@@ -1,0 +1,103 @@
+body {
+    /* background-color: aliceblue; */
+    text-align: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80vw;
+    }
+
+    /* .profileDiv {
+        position: relative;
+        width: 50%;
+    } */
+}
+
+
+.profileDiv {
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+    border-radius: 5%;
+
+
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profileDiv img {
+    width: 100%;
+    height: auto;
+}
+
+.profileDesc {
+    font-family: 'Courier New', Courier, monospace;
+    /* font-size: 2ch; */
+}
+
+.companyLink::before {
+    background-image: url(images/meliora.png);
+}
+
+.engineerIcon::before {
+    background-image: url(images/9580547601553228570-512.png);
+}
+
+.iconPrefix::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+    background-size: 100%;
+    margin-inline-end: 0.5em;
+    opacity: 0.8;
+}
+
+.links .prevLink {
+    float: left;
+}
+
+.links .nextLink {
+    float: right;
+}
+
+.links button {
+    color: blue;
+    border-radius: 5px;
+    font-size: 2ch;
+    font-weight: bolder;
+}
+
+/* .home {
+    text-align: left;
+} */
+
+.home li {
+    list-style:  none;
+    position: relative;
+    padding: 6px 0 0 20px;
+}
+
+.home li::before {
+    background:  url(images/meliora.png);
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+/* <div>Icons made by <a href="https://www.flaticon.com/authors/surang" title="surang">surang</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */
+/* https://www.meliora.co.ke/assets/images/Meliora.svg */

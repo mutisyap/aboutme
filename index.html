@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet">
+    <title>About Peter</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="home" id="homeId" hidden>
+            <div class="profileDiv">
+                <img src="images/peter6.jpg">
+            </div>
+
+            <div class="profileDesc">
+                <h1 id="name">Peter Kivulu Mutisya</h1>
+                <h2 id="role" class="iconPrefix engineerIcon">Software Engineer</h2>
+                <h2 id="companyName"><a class="companyLink iconPrefix" href="https://www.meliora.co.ke">Meliora Technologies</a></h2>
+            </div>
+
+            <div class="links">
+                <button class="prevLink"> &#9664; Projects</button>
+                <button class="nextLink"> Learning &#9654;</button>
+            </div>
+        </div>
+
+        <div class="home" hidden>
+            <h1>Professional courses</h1>
+            <ul>
+                <li>
+                    <a href="https://www.jkuat.ac.ke">J.K.U.A.T</a>
+                    <p>Bsc Computer Science</p>
+                </li>
+
+                <li>
+                    <a href="https://www.jkuat.ac.ke">Udemy</a>
+                    <ul>
+                        <li>NGINX Fundamentals: Ray Viljoen</li>
+                        <li>Apache Kafka for Beginners: Stephane Maarek</li>
+                        <li>Docker Mastery: Bret Fisher</li>
+                        <li>Complete Guide to elasticsearch: Bo Andersen</li>
+                        <li>java Programmeing Masterclass: Tim Buchalka</li>
+                        <li>Spring & Hibernate for Beginners: Chad Darby</li>
+                        <li>Angular- The complete Guide: Maximilian Schwarzmüller</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="www.meliora.co.ke">Natujenge - Tuesday Series</a>
+                </li>
+
+                <li>
+                    <a href="www.meliora.co.ke">Programmers - Morning Series</a>
+                </li>
+
+            </ul>
+            <div class="education">
+                <img src="https://www.jkuat.ac.ke/wp-content/themes/jkuat/images/logo-jkuat.jpg">
+                <br />
+                <label>Bsc Computer Science</label>
+                <hr />
+            </div>
+
+            <div class="links">
+                <button class="prevLink"> &#9664; Projects</button>
+                <button class="nextLink">Certifications &#9654;</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    fetch('http://localhost:8081/api/portfolio/1')
+    .then(response => {
+        console.log('response : ', response);
+        return response.json();
+    })
+    .then(portfolio => {
+        console.log('portfolio : ', portfolio);
+        document.getElementById("name").innerHTML = portfolio.name;
+        document.getElementById("role").innerHTML = portfolio.role;
+        document.getElementById("companyName").innerHTML = portfolio.companyName;
+        document.getElementById("homeId").style.display = 'block';
+        // place the data in our html
+    })
+</script>
+
+</html>
